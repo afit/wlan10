@@ -82,16 +82,20 @@ namespace Net.Bertware.Wlan10.Controller
 		{
 			// Start the child process.
 			Process p = new Process();
+
 			// Redirect the output stream of the child process.
 			p.StartInfo.UseShellExecute = false;
 			p.StartInfo.RedirectStandardOutput = true;
+
 			// The default codepage (and console output) in your Windows is almost certainly not Unicode.
 			// If you're alive in 2017 you likely see network SSIDs with lovely international characters,
 			// emoji and other good stuff. So we need to do something. Alas, you can't set console output
 			// encoding of a Windows app in debug mode according to Jon Skeet:
 			//    https://stackoverflow.com/a/18580114/83089
+			//
 			// Ideally we'd use the following, but if you try to run it in VisualStudio, it'll throw:
 			//    System.Console.OutputEncoding = System.Text.Encoding.UTF8;
+			//
 			// If we use the PowerShell chcp command to set the console's output with our process object,
 			// the codepage will reset before our next command. The solution? Chain commands with cmd.exe.
 			// Nasty, but it works.
@@ -100,9 +104,11 @@ namespace Net.Bertware.Wlan10.Controller
 			p.StartInfo.StandardOutputEncoding = Encoding.UTF8;
 			p.StartInfo.CreateNoWindow = true;
 			p.Start();
+
 			// Do not wait for the child process to exit before
 			// reading to the end of its redirected stream.
 			// p.WaitForExit();
+
 			// Read the output stream first and then wait.
 			string output = p.StandardOutput.ReadToEnd();
 			p.WaitForExit();
