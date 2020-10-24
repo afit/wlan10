@@ -20,7 +20,7 @@ User profiles
     All User Profile     : Another network
     All User Profile     : Here's a network
     All User Profile     : Wifi3
-I
+
 ";
         private const string frFR_profiles = @"
 Profils sur l'interface Wi-Fi :
