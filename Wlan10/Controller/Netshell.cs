@@ -23,8 +23,10 @@
 using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Printing.IndexedProperties;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Windows.Documents;
 using Net.Bertware.Wlan10.Model;
 
 namespace Net.Bertware.Wlan10.Controller
@@ -49,17 +51,30 @@ namespace Net.Bertware.Wlan10.Controller
 
 		public static ObservableCollection<String> GetNetworkNames( String output )
         {
-			MatchCollection m = Regex.Matches(output, "User Profile\\s+:\\s*(.*?)$", RegexOptions.Multiline);
+			// This'll give us chunks of network names, separated by LFs.
+			MatchCollection m = Regex.Matches(
+				// Strip the CRs out, leaving only LFs behind. We do this because people leave
+				// sample output in UNIX format in the issue tracker. Easier to assume this is
+				// simply UNIX-formatted rather than handling both LF and CRLF throughout.
+				output.Replace("\r", ""), "(?s)---\n(.*?)\n\n"
+			);
+
 			ObservableCollection<String> networks = new ObservableCollection<String>();
 
-			for (int i = 0; i < m.Count; i++)
+			foreach (Match mx in m)
 			{
-				string name = m[i].Groups[1].Value.Trim('\r');
-				if (!string.IsNullOrWhiteSpace(name))
-				{
-					networks.Add( name );
+				string[] names = mx.Groups[1].Value.Split("\n");
+
+				foreach (String name in names ) { 
+					if (name.Contains(":"))
+					{
+						String network = name.Split(": ")[1];
+						Console.WriteLine(network);
+						networks.Add(network);
+					}
 				}
 			}
+
 			return networks;
 		}
 

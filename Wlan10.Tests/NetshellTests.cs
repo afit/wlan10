@@ -20,18 +20,20 @@ User profiles
     All User Profile     : Another network
     All User Profile     : Here's a network
     All User Profile     : Wifi3
+I
 ";
         private const string frFR_profiles = @"
 Profils sur l'interface Wi-Fi :
 
 Profils de stratégies de groupe(lecture seule)
 -----------------------------------------------
-    Wifi1
-    Wifi2
+    x: Wifi1
+    x: Wifi2
 
 ** Profils utilisateurs**
 -------------
     <Aucun>
+
 ";
         private const string itIT_profiles = @"
 Profili sull'interfaccia Wi-Fi:
@@ -54,6 +56,7 @@ Profilo utente corrente: Bagno.b
 Tutti i profili utente    : Infostrada-2.4GHz-09312B
 Tutti i profili utente    : nexAPV
 Profilo utente corrente: blue_fac
+
 ";
 
         [TestMethod]
