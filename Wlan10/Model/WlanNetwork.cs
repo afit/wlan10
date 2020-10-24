@@ -30,7 +30,7 @@ namespace Net.Bertware.Wlan10.Model
 	/// <summary>
 	///     A network obtained from netshell output.
 	/// </summary>
-	internal class WlanNetwork
+	public class WlanNetwork
 	{
 		private const string CmdDetail = "wlan sh profiles \"<name>\"";
 

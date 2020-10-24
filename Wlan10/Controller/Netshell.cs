@@ -20,6 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Text;
@@ -31,25 +32,35 @@ namespace Net.Bertware.Wlan10.Controller
 	/// <summary>
 	///     Netshell interactions
 	/// </summary>
-	internal static class Netshell
+	public static class Netshell
 	{
 		private const string CmdList = "wlan sh profiles";
 
 		public static ObservableCollection<WlanNetwork> GetNetworks()
 		{
-			string output = NetshellCmd(CmdList);
-			MatchCollection m = Regex.Matches(output, "User Profile\\s+:\\s*(.*?)$", RegexOptions.Multiline);
 			ObservableCollection<WlanNetwork> results = new ObservableCollection<WlanNetwork>();
+
+			foreach (String network in GetNetworkNames( NetshellCmd(CmdList) ))
+			{
+				results.Add(new WlanNetwork(network));
+			}
+			return results;
+		}
+
+		public static ObservableCollection<String> GetNetworkNames( String output )
+        {
+			MatchCollection m = Regex.Matches(output, "User Profile\\s+:\\s*(.*?)$", RegexOptions.Multiline);
+			ObservableCollection<String> networks = new ObservableCollection<String>();
 
 			for (int i = 0; i < m.Count; i++)
 			{
 				string name = m[i].Groups[1].Value.Trim('\r');
 				if (!string.IsNullOrWhiteSpace(name))
 				{
-						results.Add(new WlanNetwork(name));
+					networks.Add( name );
 				}
 			}
-			return results;
+			return networks;
 		}
 
 		public static string NetshellCmd(string cmd)
