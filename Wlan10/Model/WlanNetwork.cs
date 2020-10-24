@@ -252,8 +252,7 @@ namespace Net.Bertware.Wlan10.Model
 				_radioType = getFieldFromOutput(output, "Radio type");
 
 				_authentication = getFieldFromOutput(output, "Authentication");
-				_cipher = getFieldFromOutput(output, "Cipher");
-				_securityKey = (String.Equals(getFieldFromOutput(output, "Security key"), "Present",
+				_cipher = getFieldFromOutput(output, "Cipher");_securityKey = (String.Equals(getFieldFromOutput(output, "Security key"), "Present",
 					StringComparison.Ordinal));
 
 				_cost = getFieldFromOutput(output, "Cost");
@@ -267,7 +266,7 @@ namespace Net.Bertware.Wlan10.Model
 			catch (Exception e)
 			{
 				MessageBox.Show(
-					"The application encountered an unexpected error while parsing a network. You can continue using the app, but some profiles may be missing. Please report this error to the developer (\"http://github.com/Bertware/Wlan10/Issues\")\r\n" +
+					"The application encountered an unexpected error while parsing a network. You can continue using the app, but some profiles may be missing. Please report this error to the developer (\"https://github.com/afit/wlan10/Issues\")\r\n" +
 					"Error details:\r\n" +
 					e.Message + "\r\n"
 					+ e.StackTrace + "\r\n\r\n" +
