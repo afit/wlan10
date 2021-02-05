@@ -1,25 +1,29 @@
 # wlan10
 
-Wi-fi network manager for Windows 10. Bringing back the functionality Microsoft removed, and more.
+wlan10 is a Wi-Fi network manager for Windows. It allows users to set the preferred connection order of Wi-Fi networks, so that your computer will always connect to the Wi-Fi you prefer when multiple networks are available.
 
-If I helped you, please say thanks! (how you can do this is below)
+This functionality was available in older versions of Windows, but was removed in Windows 10. wlan10 exists to fill this gap, without the need for users to hack around with the command-line `netsh` commands.
 
 ## Requirements
 
-* Windows 10 or 8.1 (may also work on 8, 7)
-* .NET 4 or higher
-* Wireless networks
+* Windows 10 or 8.1
+* .NET 4 or newer
+* A PC with Wi-Fi support
 
 ## Usage
 
-Open the app. Some wifi networks should show up in the list.
+1. Download wlan10 from [releases](https://github.com/afit/wlan10/releases) and run it.
+2. wlan10 will show a list of networks that your computer is configured to automatically connect to.
 
-> **If no wifi networks show up, you need to connect to some wireless networks first!**  
-> Setting up a wireless network through the >app is not supported.
+    wlan10 can't add Wi-Fi networks to your list: you should add new networks by connecting to them through Windows as usual.
 
-Drag and drop the networks to change the order to your liking. Hit the save button to store this new order. Windows should now prefer the networks which you put on top, selecting the highest positioned available network. Setting autoconnect and autoswitching (read more about autoswitching below) doesn't require saving.  
+3. Drag and drop networks to change the preferred connection order to your liking, and click `Save` to store this new order.
 
-The tool is only required for setup, and can be removed once everything is configured. See [the blog for more](http://blog.bertware.net/2016/07/set-windows-network-priority-wlan10/).
+    Windows will now prefer the networks which you put on top, selecting the highest positioned available network.
+    
+    Setting autoconnect and autoswitching doesn't require saving.  
+
+wlan10 is only required for configuring preferred network connect order: it does not need to remain running in the background, and can even be deleted after use.
 
 > **Note:** What is autoswitching?
 >
@@ -33,22 +37,16 @@ The tool is only required for setup, and can be removed once everything is confi
 
 Create a [GitHub issue](https://github.com/Bertware/wlan10/issues) if you have suggestions or problems.
 
-## Say thanks
+## Credits & licensing
 
-Say thanks! Star this project so I can see the impact, [buy me some pizza](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=K4856LBVQZ25L), or leave me a message!
-
-## Credits
-
-Idea conceived by Bertware, coded by [Bertware](http://www.bertware.net).
+[Bertware](http://www.bertware.net) created wlan10 and ran it up until version 1.1.2.
 
 This project is subject to the Mozilla Public License Version 2.0. A copy of the license is included in this repository.
 
 ### Libraries used in this project
 #### GongSolutions.WPF.DragDrop
 
-The [`GongSolutions.WPF.DragDrop`](https://github.com/punker76/gong-wpf-dragdrop) library is used as an NuGet package, and is included in the exe in executable form.
-
-`GongSolutions.WPF.DragDrop` code is public under the BSD 3-Clause License.
+The [`GongSolutions.WPF.DragDrop`](https://github.com/punker76/gong-wpf-dragdrop) library is used as an NuGet package in wlan10. `GongSolutions.WPF.DragDrop` code is public under the BSD 3-Clause License.
 
     Copyright © 2015, Jan Karger (Steven Kirk). All rights reserved.
 
