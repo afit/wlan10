@@ -69,8 +69,8 @@ namespace Net.Bertware.Wlan10.Controller
 					if (name.Contains(":"))
 					{
 						String network = name.Split(": ")[1];
-						Console.WriteLine(network);
-						networks.Add(network);
+						if ( ! networks.Contains( network ) )
+							networks.Add(network);
 					}
 				}
 			}
