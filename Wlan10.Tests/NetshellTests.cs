@@ -59,12 +59,40 @@ Profilo utente corrente: blue_fac
 
 ";
 
+        private const string dupe_adapter_profiles = @"
+Profiles on interface Wi-Fi 3:
+
+Group policy profiles (read only)
+---------------------------------
+    <None>
+
+User profiles
+-------------
+    All User Profile     : network1
+    All User Profile     : network2
+
+Profiles on interface Wi-Fi 2:
+
+Group policy profiles (read only)
+---------------------------------
+    <None>
+
+User profiles
+-------------
+    All User Profile     : network1
+    All User Profile     : network2
+
+";
+
         [TestMethod]
         public void TestGetNetworkNames()
         {
             Assert.AreEqual( 4, Netshell.GetNetworkNames( enGB_profiles ).Count );
             Assert.AreEqual( 2, Netshell.GetNetworkNames( frFR_profiles ).Count );
             Assert.AreEqual( 12, Netshell.GetNetworkNames( itIT_profiles ).Count );
+
+            // Don't dupe networks when there are multiple adapters!
+            Assert.AreEqual(2, Netshell.GetNetworkNames( dupe_adapter_profiles ).Count);
         }
     }
 }
