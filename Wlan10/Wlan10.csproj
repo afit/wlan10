@@ -4,17 +4,17 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
-    <AssemblyVersion>1.1.3.0</AssemblyVersion>
-    <FileVersion>1.1.3.0</FileVersion>
-    <Company>Bertware</Company>
-    <Copyright>Copyright © Bertware 2016</Copyright>
-    <Description>Wireless network configuration tool for Windows 10</Description>
-    <Version>1.1.3</Version>
+    <AssemblyVersion>1.2.0.0</AssemblyVersion>
+    <FileVersion>1.2.0.0</FileVersion>
+    <Company></Company>
+    <Copyright>Copyright © Wlan10 Team</Copyright>
+    <Description>Wi-Fi network manager for Windows</Description>
+    <Version>1.2.0</Version>
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="gong-wpf-dragdrop" Version="2.3.1" />
+    <PackageReference Include="gong-wpf-dragdrop" Version="2.3.2" />
   </ItemGroup>
 
 </Project>
