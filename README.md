@@ -1,8 +1,10 @@
-# wlan10
+# wlan10 — Wi-Fi network manager for Windows
 
-wlan10 is a Wi-Fi network manager for Windows. It allows users to set the preferred connection order of Wi-Fi networks, so that your computer will always connect to the Wi-Fi you prefer when multiple networks are available.
+wlan10 is a Wi-Fi network manager for Windows. It allows users to set the preferred connection order of Wi-Fi networks, so their computer will always connect to the best Wi-Fi when multiple networks are available.
 
-This functionality was available in older versions of Windows, but was removed in Windows 10. wlan10 exists to fill this gap, without the need for users to hack around with the command-line `netsh` commands.
+This functionality was available in older versions of Windows, but was removed in Windows 10. wlan10 fills this gap, without the need for users to hack around with the command-line `netsh` commands.
+
+![wlan10 screenshot](wlan10-screenshot.png)
 
 ## Requirements
 
@@ -35,18 +37,15 @@ wlan10 is only required for configuring preferred network connect order: it does
 
 ## Support
 
-Create a [GitHub issue](https://github.com/Bertware/wlan10/issues) if you have suggestions or problems.
+Raise an [issue here](https://github.com/Bertware/wlan10/issues) if you have suggestions or problems.
 
-## Credits & licensing
+## Credits & license
 
-[Bertware](http://www.bertware.net) created wlan10 and ran it up until version 1.1.2.
+[Bertware](http://www.bertware.net) created wlan10 and ran it up until version 1.1.2. It is currently maintained by [Aidan Fitzpatrick](https://github.com/afit/).
 
 This project is subject to the Mozilla Public License Version 2.0. A copy of the license is included in this repository.
 
-### Libraries used in this project
-#### GongSolutions.WPF.DragDrop
-
-The [`GongSolutions.WPF.DragDrop`](https://github.com/punker76/gong-wpf-dragdrop) library is used as an NuGet package in wlan10. `GongSolutions.WPF.DragDrop` code is public under the BSD 3-Clause License.
+The [`GongSolutions.WPF.DragDrop`](https://github.com/punker76/gong-wpf-dragdrop) library is used by this project, and is subject to the BSD 3-Clause License.
 
     Copyright © 2015, Jan Karger (Steven Kirk). All rights reserved.
 
