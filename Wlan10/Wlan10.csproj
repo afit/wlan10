@@ -12,6 +12,7 @@
     <Description>Wi-Fi network manager for Windows</Description>
     <Version>1.2.0</Version>
     <SignAssembly>false</SignAssembly>
+    <ApplicationIcon>wlan10.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
