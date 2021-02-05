@@ -29,7 +29,7 @@ namespace Net.Bertware.Wlan10
             lvNetworks.ItemsSource = networks;
         }
 
-        private void btnSaveOrder_Click(object sender, RoutedEventArgs e)
+        private void btnSaveChanges_Click(object sender, RoutedEventArgs e)
         {
             // Drag and drop will reorder the list (binding with observablelist). So just loop through the list and set the current position.
             for (int i = 0; i < networks.Count; i++)
@@ -56,20 +56,9 @@ namespace Net.Bertware.Wlan10
             }
         }
 
-        private void btnDonate_Click(object sender, RoutedEventArgs e)
+        private void btnLearnMore_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("You will now be redirected to the donate page");
-            Process.Start("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=K4856LBVQZ25L");
-        }
-
-        private void btnCredits_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show(
-                "Idea and creation by Bertware.\r\n" +
-                "www.bertware.net www.bertmarcelis.be\r\n\r\n" +
-                "This program uses the GongSolutions.Wpf.DragDrop library made by Punker79\r\n" +
-                "Copyright (c) 2015, Jan Karger (Steven Kirk)\r\n" +
-                "https://github.com/punker76/gong-wpf-dragdrop");
+            Process.Start(new ProcessStartInfo("cmd", $"/c start https://github.com/afit/wlan10") { CreateNoWindow = true });
         }
     }
 }
