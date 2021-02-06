@@ -19,15 +19,11 @@ This functionality was available in older versions of Windows, but was removed i
 
     wlan10 can't add Wi-Fi networks to your list: you should add new networks by connecting to them through Windows as usual.
 
-3. Drag and drop networks to change the preferred connection order to your liking, and click `Save` to store this new order.
-
-    Windows will now prefer the networks which you put on top, selecting the highest positioned available network.
+3. Drag and drop networks to change the preferred connection order to your liking, and click `Save changes` to store this new order. Windows will now prefer the networks which you put on top, selecting the highest positioned available network.
     
-    Setting autoconnect and autoswitching doesn't require saving.  
-
 wlan10 is only required for configuring preferred network connect order: it does not need to remain running in the background, and can even be deleted after use.
 
-### What does autoconnect and autoswitch mean?
+### What do autoconnect and autoswitch mean?
 
 Networks with `autoconnect` set will be automatically connected to if your computer isn't currently connected to a Wi-Fi network. The highest ordered (from the top) network will be connected to.
 
