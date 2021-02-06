@@ -27,17 +27,15 @@ This functionality was available in older versions of Windows, but was removed i
 
 wlan10 is only required for configuring preferred network connect order: it does not need to remain running in the background, and can even be deleted after use.
 
-> **Note:** What is autoswitching?
->
-> The `autoSwitch` (`WLANProfile`) element determines the roaming behavior of an auto-connected network when a more preferred network is in range. This element is optional.
->
-> If `autoSwitch` is `true` and `connectionMode` is set to `auto`, a connection to a more preferred network must be attempted whenever a more preferred network comes into range. A more preferred network is one that is ordered higher in the list of preferred wireless networks. This connection attempt occurs when connected to another network.
->
-> An `autoSwitch` value set to `true` results in a higher frequency of periodic scanning for new networks. This may result in increased radio frequency pollution from these periodic scans and increased power consumption used by the wireless network adapter.
+### What does autoconnect and autoswitch mean?
+
+Networks with `autoconnect` set will be automatically connected to if your computer isn't currently connected to a Wi-Fi network. The highest ordered (from the top) network will be connected to.
+
+If a higher-ordered network becomes available after your computer is connected to a Wi-Fi network, it will switch to it if `autoswitch` is checked. Checking `autoswitch` will result in higher frequency of periodic scanning for new networks. This may result in increased radio frequency pollution from these periodic scans and increased power consumption used by the wireless network adapter.
 
 ## Support
 
-Raise an [issue here](https://github.com/Bertware/wlan10/issues) if you have suggestions or problems.
+Raise an [issue here](https://github.com/afit/wlan10/issues) if you have suggestions or problems.
 
 ## Credits & license
 
