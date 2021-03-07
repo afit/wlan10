@@ -1,5 +1,7 @@
 # wlan10 — Wi-Fi network manager for Windows
 
+![Build & test](https://github.com/afit/wlan10/actions/workflows/dotnet-core-desktop.yml/badge.svg)
+
 wlan10 is a Wi-Fi network manager for Windows. It allows users to set the preferred connection order of Wi-Fi networks, so their computer will always connect to the best Wi-Fi when multiple networks are available.
 
 This functionality was available in older versions of Windows, but was removed in Windows 10. wlan10 fills this gap, without the need for users to hack around with the command-line `netsh` commands.
