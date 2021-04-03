@@ -37,7 +37,7 @@ Raise an [issue here](https://github.com/afit/wlan10/issues) if you have suggest
 
 ## Credits & license
 
-[Bertware](http://www.bertware.net) created wlan10 and ran it up until version 1.1.2. It is currently maintained by [Aidan Fitzpatrick](https://github.com/afit/).
+[Bertware](http://www.bertware.net) created wlan10 and ran it up until version 1.1.2. It is currently maintained by [Aidan Fitzpatrick](https://afit.co).
 
 This project is subject to the Mozilla Public License Version 2.0. A copy of the license is included in this repository.
 
